@@ -1,0 +1,22 @@
+{
+  "name": "nox-clean-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NOX CLEAN - Cleaning Booking Marketplace Monorepo",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:admin": "npm run dev --workspace=apps/admin",
+    "dev:api": "npm run start:dev --workspace=apps/api",
+    "build": "npm run build --workspaces --if-present",
+    "db:generate": "npm run db:generate --workspace=packages/database",
+    "db:push": "npm run db:push --workspace=packages/database",
+    "db:studio": "npm run db:studio --workspace=packages/database"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
